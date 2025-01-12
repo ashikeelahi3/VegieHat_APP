@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { TextInput, Button, Text, View, TouchableOpacity } from "react-native";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { FIREBASE_AUTH } from '@/FirebaseConfig';
+import { Redirect } from 'expo-router';
 
 const AuthScreen: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -20,6 +21,7 @@ const AuthScreen: React.FC = () => {
       await createUserWithEmailAndPassword(FIREBASE_AUTH, email, password);
       alert("User registered!");
       setNewUser(false)
+      return <Redirect href="/(tabs)" />;
     } catch (err: any) {
       setError(err.message);
     }
@@ -32,6 +34,7 @@ const AuthScreen: React.FC = () => {
       setEmail("")
       setPassword("")
       setError("")
+      
     } catch (err: any) {
       setError(err.message);
     }
