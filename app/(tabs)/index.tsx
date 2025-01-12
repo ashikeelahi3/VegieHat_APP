@@ -5,7 +5,8 @@ export default function Index() {
   return (
     <View className="h-screen w-screen flex items-center justify-center">
       <Text className="text-blue-600">Edit app/index.tsx to edit this screen.</Text>
-      
+      <Link href="/Login">Login</Link>
+      <Link href="/about">About</Link>
     </View>
   );
 }
