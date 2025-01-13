@@ -11,9 +11,11 @@ const handleSignOut = async () => {
 const profile = () => {
   
   return (
-    <View>
-      <Text>profile</Text>
-      <Button title="Log Out" onPress={handleSignOut} />
+    <View className='w-screen h-screen flex items-center justify-center'>
+      <View className='mx-2 flex'>
+        <Text>profile</Text>
+        <Button title="Log Out" onPress={handleSignOut} />
+      </View>
     </View>
   )
 }
