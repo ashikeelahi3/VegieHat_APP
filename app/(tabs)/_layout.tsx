@@ -19,6 +19,7 @@ export default function TabsLayout() {
       <Tabs.Screen name="index" 
         options={{
           headerTitle: "VegieHat",
+          tabBarLabel: "Home",
           tabBarIcon: ({focused, color}) => (
             <Ionicons 
               name={focused ? "home-sharp":"home-outline"} 
@@ -28,12 +29,39 @@ export default function TabsLayout() {
         ),
         }}
       />
-      <Tabs.Screen name="about" 
+      <Tabs.Screen name="input" 
         options={{
-          headerTitle: "About",
+          headerTitle: "Input Data",
+          tabBarLabel: "Input Data",
           tabBarIcon: ({focused, color}) => (
             <Ionicons 
-              name={focused ? "information-circle":"information-circle-outline"} 
+              name={focused ? "add-circle":"add-circle-outline"} 
+              color={color}
+              size={30}
+            />
+        ),
+        }}
+      />
+      <Tabs.Screen name="graph" 
+        options={{
+          headerTitle: "View Analysis",
+          tabBarLabel: "Analysis",
+          tabBarIcon: ({focused, color}) => (
+            <Ionicons 
+              name={focused ? "analytics":"analytics-outline"} 
+              color={color}
+              size={30}
+            />
+        ),
+        }}
+      />
+      <Tabs.Screen name="profile" 
+        options={{
+          headerTitle: "Profile",
+          tabBarLabel: "Profile",
+          tabBarIcon: ({focused, color}) => (
+            <Ionicons 
+              name={focused ? "person":"person-outline"} 
               color={color}
               size={30}
             />
