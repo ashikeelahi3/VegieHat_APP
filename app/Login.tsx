@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
-import { TextInput, Button, Text, View, TouchableOpacity } from "react-native";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import React, { useState, useEffect } from 'react';
+import { TextInput, Button, Text, View } from "react-native";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { FIREBASE_AUTH } from '@/FirebaseConfig';
+import { useAuth } from '@/AuthContext';
+import { useRouter } from 'expo-router';
 
 const AuthScreen: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [newUser, setNewUser] = useState(false);
+  const { user } = useAuth();
+  const router = useRouter();
+  
+  useEffect(() => {
+    if (user) {
+      router.replace("/"); // Redirect to home if authenticated
+    }
+  }, [user, router]);
 
   const toggleLogin = () => {
     setNewUser(!newUser);
