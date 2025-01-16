@@ -38,6 +38,11 @@ const InputScreen = () => {
       return;
     }
 
+    if(parseFloat(price) < 0) {
+      Alert.alert('Error', 'Number cannot be negative');
+      return;
+    }
+
     if (editingItemId) {
       // Update existing item
       const updatedItems = items.map((item) =>
