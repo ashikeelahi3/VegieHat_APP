@@ -1,6 +1,6 @@
 import { Tabs, useRouter } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { useAuth } from "@/AuthContext";
+import { useAuth } from "@/context/AuthContext";
 import { useEffect } from "react";
 
 export default function TabsLayout() {

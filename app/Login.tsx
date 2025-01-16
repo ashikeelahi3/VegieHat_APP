@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { TextInput, Button, Text, View } from "react-native";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { FIREBASE_AUTH } from '@/FirebaseConfig';
-import { useAuth } from '@/AuthContext';
+import { useAuth } from '@/context/AuthContext';
 import { useRouter } from 'expo-router';
 
 const AuthScreen: React.FC = () => {
