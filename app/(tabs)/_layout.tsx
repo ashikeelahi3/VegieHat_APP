@@ -57,6 +57,19 @@ export default function TabsLayout() {
         ),
         }}
       />
+      <Tabs.Screen name="input2" 
+        options={{
+          headerTitle: "New Input Data",
+          tabBarLabel: "New Input Data",
+          tabBarIcon: ({focused, color}) => (
+            <Ionicons 
+              name={focused ? "add-circle":"add-circle-outline"} 
+              color={color}
+              size={30}
+            />
+        ),
+        }}
+      />
       <Tabs.Screen name="graph" 
         options={{
           headerTitle: "View Analysis",
