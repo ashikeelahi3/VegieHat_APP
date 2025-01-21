@@ -27,6 +27,12 @@ const Input2 = () => {
   const [isEditMode, setIsEditMode] = useState(false);
   const [editingItemId, setEditingItemId] = useState<number | null>(null);
 
+  // Remove non-numeric characters (including "-")
+  const handlePriceChange = (value: string) => {
+    const filteredValue = value.replace(/[^0-9.]/g, "");
+    setPrice(filteredValue);
+  };
+
   // Function to load cart data from AsyncStorage
   const loadCartFromStorage = async () => {
     try {
@@ -151,7 +157,7 @@ const Input2 = () => {
                   className="border border-gray-300 rounded-md p-2 mb-3"
                   placeholder="Enter price"
                   value={price}
-                  onChangeText={setPrice}
+                  onChangeText={handlePriceChange}
                   keyboardType="numeric"
                 />
                 {/* Dynamic Categories Dropdown */}
